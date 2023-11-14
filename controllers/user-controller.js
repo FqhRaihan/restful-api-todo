@@ -7,7 +7,7 @@ module.exports = {
     const users = await User.findAll();
 
     res.json({
-      message: "Managed to get User",
+      message: "Berhasil mendapatkan Pengguna",
       data: users,
     });
   },
@@ -17,7 +17,7 @@ module.exports = {
     const user = await User.find((user) => user.id == id);
 
     res.json({
-      message: "Managed to get User by Id",
+      message: "Berhasil mendapatkan Pengguna berdasarkan Id",
       data: user,
     });
   },
@@ -32,12 +32,12 @@ module.exports = {
       await User.create(data);
 
       res.status(201).json({
-        message: "Successfully added User",
+        message: "Berhasil menambahkan Pengguna",
       });
         
     } catch {
       res.json({
-        message: "Failed to add User",
+        message: "Gagal menambahkan Pengguna",
       });
     }
   },

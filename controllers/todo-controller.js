@@ -6,7 +6,7 @@ module.exports = {
     const todos = await Todo.findAll();
 
     res.json({
-      message: "Managed to get Todo Data",
+      message: "Berhasil mendapatkan Todo Data",
       data: todos,
     });
   },
@@ -15,7 +15,7 @@ module.exports = {
     const todo = await Todo.find((todo) => todo.id == id);
 
     res.json({
-      message: "Managed to get Todo Data by Id",
+      message: "Berhasil mendapatkan Todo Data by Id",
       data: todo,
     });
   },
@@ -32,13 +32,13 @@ module.exports = {
       await Todo.push(newTodo);
 
       res.status(201).json({
-        message: "Successfully added Todo",
+        message: "Berhasil menambahkan Todo",
         data: Todo,
       });
         
     } catch (error) {
       res.json({
-        message: "Failed to add User",
+        message: "Gagal menambahkan Pengguna",
         error: error.message,
       });
     }
@@ -71,19 +71,19 @@ module.exports = {
 
       if (!todo) {
         res.json({
-          message: "Cannot found Todo",
+          message: "Tidak dapat menemukan Todo",
         });
       }
 
       await todo.destroy();
 
       res.json({
-        message: "Successfully delete Todo by Id",
+        message: "Berhasil menghapus Todo berdasarkan Id",
         data: todos,
       });
     } catch {
       res.json({
-        message: "Cannot delete Todo",
+        message: "Tidak dapat menemukan Todo",
         data: todos,
       });
     }
@@ -95,7 +95,7 @@ module.exports = {
     await todos.destroy();
 
     res.json({
-      message: "Successfully deleted the entire Todo List",
+      message: "Berhasil menghapus seluruh Daftar Todo",
       data: todos,
     });
   },
